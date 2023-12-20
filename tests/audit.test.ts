@@ -36,7 +36,6 @@ describe("Audit", () => {
   it("index should return an array", async () => {
     const response = await fetch(`${config.HOST}/audit`)
     const data = await response.json()
-    console.error("audit data", data)
     assert.strictEqual(200, response.status)
     assert.strictEqual(true, Array.isArray(data))
     assert.strictEqual(true, data.length > 1)

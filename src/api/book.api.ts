@@ -32,7 +32,6 @@ bookApi.post("/", async (req, res) => {
 bookApi.get("/:id", async (req, res) => {
   const validation = paramSchema.safeParse(req.params)
   if (!validation.success) {
-    console.error(validation.error)
     return res.status(400).send(validation.error)
   }
   const { id } = validation.data
