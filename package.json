@@ -7,6 +7,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "npx tsx --watch src/index.ts",
+    "migrate:dev": "npx prisma migrate dev",
+    "migrate": "npx prisma migrate deploy",
+    "test:dev": "node --import tsx --test --watch tests/**.test.ts",
     "test": "node --import tsx --test tests/**.test.ts"
   },
   "repository": {
