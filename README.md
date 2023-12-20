@@ -1,2 +1,3 @@
-# books-application
-Simple Library API setup
+# Books Application
+
+Simple CRUD application for Managing Books
