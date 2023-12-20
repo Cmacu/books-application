@@ -9,6 +9,13 @@ Simple CRUD application for Managing Books
 - NodeJS (https://nodejs.org/en/download/) Any version above 18.0.0 should work (18 includes the node:test module)
 - MySQL Database (https://dev.mysql.com/downloads/) Any version above 8.0.0 should work
 - Create an empty database and remember the name and connection details (you will need to set them up in the .env file later)
+- Open the terminal and clone the repository
+
+```bash
+cd /path/to/your/projects/folder
+git clone git@github.com:Cmacu/books-application.git
+cd books-application
+```
 
 ### Configuration
 
@@ -17,7 +24,6 @@ Simple CRUD application for Managing Books
 
 ### Installation
 
-- Clone the repository
 - Run `npm install` to install all the dependencies
 - To run the migrations open your terminal in the project directory and execute:
 
