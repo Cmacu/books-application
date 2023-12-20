@@ -1,0 +1,3 @@
+- [ ] Add book filter by author
+- [ ] Add search algorithm
+- [ ] Setup simple React frontend for displaying and managing authors and books
