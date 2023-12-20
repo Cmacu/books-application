@@ -19,7 +19,7 @@ model Author {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  Book Book[]
+  books Book[]
 
   @@index([createdAt])
   @@index([updatedAt])
@@ -28,8 +28,9 @@ model Author {
 model Book {
   id Int @id @default(autoincrement())
 
-  title     String
-  pageCount Int
+  title       String
+  pageCount   Int
+  releaseDate DateTime?
 
   authorId Int
   author   Author @relation(fields: [authorId], references: [id])

@@ -6,6 +6,14 @@ import { paramSchema } from "../validation/param.schema"
 
 export const authorApi = express.Router()
 
+export const getAuthor = async (id: number) => {
+  const author = await db.author.findUnique({ where: { id } })
+  if (!author) {
+    throw new Error("Not Found")
+  }
+  return author
+}
+
 authorApi.get("/", async (req, res) => {
   const validation = querySchema.safeParse(req.query)
   if (!validation.success) {
@@ -44,7 +52,7 @@ authorApi.get("/:id", async (req, res) => {
 })
 
 authorApi.patch("/:id", async (req, res) => {
-  const validation = paramSchema.safeParse(req.params)
+  const validation = paramSchema.partial().safeParse(req.params)
   if (!validation.success) {
     return res.status(400).send(validation.error)
   }

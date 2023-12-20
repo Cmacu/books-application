@@ -81,7 +81,7 @@ describe("Author", () => {
   })
 
   // delete
-  it("delete should return 200:OK", async () => {
+  it("delete should return 204:OK", async () => {
     const response = await fetch(`${config.HOST}/author/${authorId}`, {
       method: "DELETE",
     })
