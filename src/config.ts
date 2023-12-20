@@ -21,4 +21,9 @@ const configSchema = z.object({
   }),
 })
 
-export const config = configSchema.parse(process.env)
+const config = configSchema.parse(process.env)
+
+export default {
+  ...config,
+  HOST: `http://localhost:${config.PORT}`,
+}
