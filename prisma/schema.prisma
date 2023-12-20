@@ -41,3 +41,20 @@ model Book {
   @@index([createdAt])
   @@index([updatedAt])
 }
+
+model AuditLog {
+  id Int @id @default(autoincrement())
+
+  action   String
+  entity   String?
+  entityId Int?
+  data     Json?
+  query    Json?
+  status   Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdAt])
+  @@index([updatedAt])
+}
